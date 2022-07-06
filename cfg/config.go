@@ -30,6 +30,7 @@ type Cloudflare struct {
 func LoadConfig() (*Config, error) {
 	viper.SetConfigName("config") // name of config file (without extension)
 	viper.SetConfigType("yaml")   // REQUIRED if the config file does not have the extension in the name
+	viper.AddConfigPath("$HOME/.aws-helper")
 	viper.AddConfigPath(".")
 
 	var cc Config
